@@ -28,7 +28,7 @@ int main() {
     printf("Digite o numero da população: ");
     scanf("%d", &Populacao);
     printf("O numero da população é: %d\n", Populacao);
-
+//Tive dificuldade de separaras declarações aqui.
     float Area;
     printf("Digite a area da cidade: ");
     scanf("%f\n", &Area);
