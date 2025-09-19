@@ -108,5 +108,23 @@ int main() {
     printf("O PIB per capital é: %f reais\n", PiBPerCapital2);
 
 
+    // Comparndo as cartas
+
+        float SuperPoder1, SuperPoder2;
+        SuperPoder1 = (float) Populacao + Area + PIB + NumeroDePontosTuristicos + PiBPerCapital + (1 / DensidadePopulacional);
+        SuperPoder2 = (float) Populacao2 + Area2 + PIB2 + NumeroDePontosTuristicos2 + PiBPerCapital2 + (1 / DensidadePopulacional2);
+        printf("Super Poder Carta 1: %f\n", SuperPoder1);
+        printf("Super Poder Carta 2: %f\n", SuperPoder2);
+        printf("Comparando as cartas:\n");
+        printf("Populaçâo: %d\n", Populacao > Populacao2);
+        printf("Area: %f\n", Area > Area2);
+        printf("PIB: %f\n", PIB > PIB2);
+        printf("Numero de Pontos Turisticos: %d\n", NumeroDePontosTuristicos > NumeroDePontosTuristicos2);
+        printf("Densidade Populacional (menor vence): %d\n", DensidadePopulacional < DensidadePopulacional2);
+        printf("PIB per Capital:%f\n", PiBPerCapital > PiBPerCapital2);
+        printf("Super Poder: %f\n", SuperPoder1 > SuperPoder2);
+        printf("Fim do Programa\n");
+
+
     return 0;
 }
