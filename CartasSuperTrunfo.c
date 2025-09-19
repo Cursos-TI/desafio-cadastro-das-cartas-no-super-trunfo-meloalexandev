@@ -1,22 +1,130 @@
 #include <stdio.h>
-
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
+#include <string.h>
+//Nivél Novato.
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    printf("Cartas Super Trunfo - Cadastro de Cidades\n");
+
+    printf("Carta 1\n");
+// Declaração das variáveis
+    char Estado;
+    printf("Digite a Letra do Estado: ");
+    scanf(" %c", &Estado); // espaço antes do %c para ignorar enter anterior
+    printf("A letra do Estado é: %c\n", Estado);
+
+    char CodigoDaCarta[10];
+    printf("Digite o codigo da carta: ");
+    scanf("%9s", CodigoDaCarta);
+    printf("O Codigo da Carta é: %s\n", CodigoDaCarta);
+
+    char NomeDaCidade[40];
+    printf("Digite o nome da cidade: ");
+    getchar(); // Limpa o buffer antes de fgets
+    fgets(NomeDaCidade, sizeof(NomeDaCidade), stdin);
+
+    NomeDaCidade[strcspn(NomeDaCidade, "\n")] = 0;
+    printf("O nome da cidade é: %s\n", NomeDaCidade);
+
+    int Populacao;
+    printf("Digite o numero da população: ");
+    scanf("%d", &Populacao);
+    printf("O numero da população é: %d\n", Populacao);
+//Tive dificuldade de separaras declarações aqui.
+    float Area;
+    printf("Digite a area da cidade: ");
+    scanf("%f\n", &Area);
+    printf("A area da cidade é: %f\n", Area);
+
+    float PIB;
+    printf("Digite o PIB da cidade: ");
+    scanf("%f\n", &PIB);
+    printf("O PIB da cidade é: %f Bilhoes de reais", PIB);
+
+    int NumeroDePontosTuristicos;
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d\n", &NumeroDePontosTuristicos);
+    printf("O numero de pontos turisticos é: %d\n", NumeroDePontosTuristicos);
+
+    // Adicionando novos atributos, Calcular a Densidade Populacional
+    float DensidadePopulacional;
+    DensidadePopulacional = (float)Populacao / (float)Area;
+    printf(" A densidade populacional é: %f habitantes por km²\n", DensidadePopulacional);
+
+
+    float PiBPerCapital;
+    PiBPerCapital = (PIB / (float)Populacao) * 1000000; // Convertendo PIB de bilhões para reais
+    printf("O PIB per capital é: %f reais\n", PiBPerCapital);
+
+
+
+     printf("Carta 2\n");
+    // Declaração das variáveis
+        char Estado2;
+        printf("Digite a Letra do Estado: ");
+        scanf(" %c", &Estado2); // espaço antes do %c para ignorar enter anterior
+        printf("A letra do Estado é: %c\n", Estado2);
+
+        char CodigoDaCarta2[10];
+        printf("Digite o codigo da carta: ");
+        scanf("%9s", CodigoDaCarta2);
+        printf("O Codigo da Carta é: %s\n", CodigoDaCarta2);
+
+        char NomeDaCidade2[40];
+        printf("Digite o nome da cidade: ");
+        getchar(); // Limpa o buffer antes de fgets
+        fgets(NomeDaCidade2, sizeof(NomeDaCidade2), stdin);
+
+        NomeDaCidade2[strcspn(NomeDaCidade2, "\n")] = 0;
+        printf("O nome da cidade é: %s\n", NomeDaCidade2);
+
+        int Populacao2;
+        printf("Digite o numero da população: ");
+        scanf("%d", &Populacao2);
+        printf("O numero da população é: %d\n", Populacao2);
+
+        float Area2;
+        printf("Digite a area da cidade: ");
+        scanf("%f", &Area2);
+        printf("A area da cidade é: %f\n", Area2);
+
+        float PIB2;
+        printf("Digite o PIB da cidade: ");
+        scanf("%f", &PIB2);
+        printf("O PIB da cidade é: %f Bilhoes de reais", PIB2);
+
+        int NumeroDePontosTuristicos2;
+        printf("Digite o numero de pontos turisticos: ");
+        scanf("%d", &NumeroDePontosTuristicos2);
+        printf("O numero de pontos turisticos é: %d\n", NumeroDePontosTuristicos2);
+
+
+         // Adicionando novos atributos, Calcular a Densidade Populacional
+    float DensidadePopulacional2;
+    DensidadePopulacional2 = (float)Populacao2 / (float)Area2;
+    printf(" A densidade populacional é: %f habitantes por km²\n", DensidadePopulacional2);
+
+
+    float PiBPerCapital2;
+    PiBPerCapital2 = (PIB2 / (float)Populacao2) * 1000000; // Convertendo PIB de bilhões para reais
+    printf("O PIB per capital é: %f reais\n", PiBPerCapital2);
+
+
+    // Comparndo as cartas
+
+        float SuperPoder1, SuperPoder2;
+        SuperPoder1 = (float) Populacao + Area + PIB + NumeroDePontosTuristicos + PiBPerCapital + (1 / DensidadePopulacional);
+        SuperPoder2 = (float) Populacao2 + Area2 + PIB2 + NumeroDePontosTuristicos2 + PiBPerCapital2 + (1 / DensidadePopulacional2);
+        printf("Super Poder Carta 1: %f\n", SuperPoder1);
+        printf("Super Poder Carta 2: %f\n", SuperPoder2);
+        printf("Comparando as cartas:\n");
+        printf("Populaçâo: %d\n", Populacao > Populacao2);
+        printf("Area: %f\n", Area > Area2);
+        printf("PIB: %f\n", PIB > PIB2);
+        printf("Numero de Pontos Turisticos: %d\n", NumeroDePontosTuristicos > NumeroDePontosTuristicos2);
+        printf("Densidade Populacional (menor vence): %d\n", DensidadePopulacional < DensidadePopulacional2);
+        printf("PIB per Capital:%f\n", PiBPerCapital > PiBPerCapital2);
+        printf("Super Poder: %f\n", SuperPoder1 > SuperPoder2);
+        printf("Fim do Programa\n");
+
 
     return 0;
 }
